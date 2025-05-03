@@ -27,7 +27,6 @@ class Solution {
         curr=head.next;
         ListNode temp=head;
         while(!stack.isEmpty()){
-            System.out.println(curr.val+" "+stack.peek().val);
             temp.next=new ListNode(stack.pop().val);
             temp=temp.next;
             if(curr==slow) break;
