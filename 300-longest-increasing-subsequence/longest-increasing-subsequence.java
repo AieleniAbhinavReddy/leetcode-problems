@@ -9,8 +9,7 @@ class Solution {
         for(int i=1;i<n;i++){
             for(int j=0;j<i;j++){
                 if(nums[i]>nums[j]){
-                    int t=dp[j]+1;
-                    dp[i]=Math.max(dp[i],t);
+                    dp[i]=Math.max(dp[i],dp[j]+1);
                     maxl=Math.max(maxl,dp[i]);
                 }
             }
