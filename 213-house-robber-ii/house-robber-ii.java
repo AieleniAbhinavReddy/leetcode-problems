@@ -16,8 +16,6 @@ class Solution {
         if(n==1) return nums[0];
         int[] l1=Arrays.copyOfRange(nums,0,n-1);
         int[] l2=Arrays.copyOfRange(nums,1,n);
-        System.out.println(Arrays.toString(l1));
-        System.out.println(Arrays.toString(l2));
         int maxProfit=Math.max(robl(l1),robl(l2));
         return maxProfit;
     }
