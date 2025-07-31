@@ -1,5 +1,5 @@
 class Solution {
-    public int robl(int[] nums) {
+    public int robHelper(int[] nums) {
         if(nums.length==0) return 0;
         if(nums.length<2) return nums[0];
         int n=nums.length;
@@ -16,7 +16,7 @@ class Solution {
         if(n==1) return nums[0];
         int[] l1=Arrays.copyOfRange(nums,0,n-1);
         int[] l2=Arrays.copyOfRange(nums,1,n);
-        int maxProfit=Math.max(robl(l1),robl(l2));
+        int maxProfit=Math.max(robHelper(l1),robHelper(l2));
         return maxProfit;
     }
 }
