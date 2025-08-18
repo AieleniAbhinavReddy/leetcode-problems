@@ -7,9 +7,9 @@ class MyStack {
     }
     
     public void push(int x) {
-        q2.add(x);
+        q2.offer(x);
         while (!q1.isEmpty()) {
-            q2.add(q1.remove());
+            q2.offer(q1.poll());
         }
         Queue<Integer> temp = q1;
         q1 = q2;
@@ -18,10 +18,9 @@ class MyStack {
     
     public int pop() {
         if (q1.isEmpty()) return -1;
-        return q1.remove();
+        return q1.poll();
     }
 
-    // Get the top element
     public int top() {
         if (q1.isEmpty()) return -1;
         return q1.peek();
