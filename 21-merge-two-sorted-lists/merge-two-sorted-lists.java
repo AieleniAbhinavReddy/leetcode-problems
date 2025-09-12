@@ -24,28 +24,20 @@ class Solution {
         ListNode curr=head;
         while(list1 !=null && list2 != null){
             if(list1.val<list2.val){
-                // ListNode newNode=new ListNode(list1.val);
-                // curr.next=newNode;
                 curr.next=list1;
                 list1=list1.next;
             }else{
-                // ListNode newNode=new ListNode(list2.val);
-                // curr.next=newNode;
                 curr.next=list2;
                 list2=list2.next;
             }
             curr=curr.next;
         }
         while(list1!=null){
-            // ListNode newNode=new ListNode(list1.val);
-            // curr.next=newNode;
             curr.next=list1;
             curr=curr.next;
             list1=list1.next;
         }
         while(list2!=null){
-            // ListNode newNode=new ListNode(list2.val);
-            // curr.next=newNode;
             curr.next=list2;
             curr=curr.next;
             list2=list2.next;
