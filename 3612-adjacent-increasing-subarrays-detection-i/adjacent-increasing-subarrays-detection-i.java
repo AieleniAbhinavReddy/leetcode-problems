@@ -19,7 +19,6 @@ class Solution {
     }
     // public boolean hasIncreasingSubarrays(List<Integer> nums, int k) {
     //     boolean[] check=new boolean[nums.size()];
-    //     // Arrays.fill(check,false);
     //     for(int i=0;i<nums.size();i++){
     //         if(checkIncreasing(nums,i,k)){
     //             check[i]=true;
