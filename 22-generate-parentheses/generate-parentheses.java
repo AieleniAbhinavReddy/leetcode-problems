@@ -10,7 +10,6 @@ class Solution {
         if(close<open){
             backtrack(res,curr+")",open,close+1,n);
         }
-        
     }
     public List<String> generateParenthesis(int n) {
         List<String> res=new ArrayList<>();
