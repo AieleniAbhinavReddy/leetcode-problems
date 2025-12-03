@@ -8,9 +8,9 @@ class Solution {
             if(p>maxp){
                 maxp=p;
             }
-            if(maxp<0){
-                maxp=0;
-            }
+            // if(maxp<0){
+            //     maxp=0;
+            // }
         }
         return maxp;
     }
