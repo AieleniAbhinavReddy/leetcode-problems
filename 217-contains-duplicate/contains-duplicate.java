@@ -3,7 +3,6 @@ class Solution {
         Set<Integer> set=new HashSet<>();
         for(int n:nums){
             if(!set.add(n)) return true;
-            //set.add(n);
         }
         return false;
     }
