@@ -1,39 +1,44 @@
-/**
- * Definition for singly-linked list.
- * public class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode() {}
- *     ListNode(int val) { this.val = val; }
- *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
- * }
- */
 class Solution {
+    static ListNode reverse(ListNode head){
+        ListNode prev = null;
+        ListNode curr = head;
+        while(curr != null){
+            ListNode next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        return prev;
+    }
     public void reorderList(ListNode head) {
-        ListNode slow=head;
-        ListNode fast=head;
-        if(slow.next==null) return;
-        while(fast!=null){
-            slow=slow.next;
-            fast=fast.next;
-            if(fast!=null) fast=fast.next;
+    if (head == null || head.next == null) {
+        return;
+    }
+    ListNode slow = head;
+    ListNode fast = head;
+    ListNode middle_prev = null;
+    while (fast != null && fast.next != null) {
+        middle_prev = slow;
+        slow = slow.next;
+        fast = fast.next.next;
+    }
+    ListNode head1 = head;
+    ListNode head2 = slow;
+    if (middle_prev != null) {
+        middle_prev.next = null;
+    }
+    head2 = reverse(head2);
+    ListNode p1 = head1;
+    ListNode p2 = head2;
+    while (p1 != null && p2 != null) {
+        ListNode next1 = p1.next;
+        ListNode next2 = p2.next;
+        p1.next = p2;
+        if (next1 != null) {
+            p2.next = next1;
         }
-        Stack<ListNode> stack=new Stack<>();
-        ListNode curr=slow;
-        while(curr!=null){
-            stack.push(curr);
-            curr=curr.next;
-        }
-        curr=head.next;
-        ListNode temp=head;
-        while(!stack.isEmpty()){
-            temp.next=new ListNode(stack.pop().val);
-            temp=temp.next;
-            if(curr==slow) break;
-            temp.next=new ListNode(curr.val);
-            temp=temp.next;
-            curr=curr.next;
-        }
-        head=temp.next;
-    }   
+        p1 = next1;
+        p2 = next2;
+    }
+    }
 }
