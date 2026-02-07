@@ -13,7 +13,6 @@ class Solution {
                 ans.add(Arrays.asList(arr[i], arr[i+1]));
             }
         }
-
         return ans;
     }
 }
